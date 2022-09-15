@@ -43,8 +43,12 @@ class ProductsManager{
   }
 
   List<Product> get items{
-    return [..._items];
+     List<Product> a= [..._items];
+    return a;
 
+  }
+  Product get a{
+      return _items[1];
   }
     List<Product> get favoriteItems{
       return _items.where((prodItem) => prodItem.isFavorite).toList();
