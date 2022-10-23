@@ -28,8 +28,8 @@ class CartManager with ChangeNotifier {
 
  double get totalAmount {
     var total = 0.0 ;
-    _items.forEach ( ( key , cartItem ) {
-      total + cartItem.price * cartItem.quantity ;
+    _items.forEach((key,cartItem) {
+      total+= cartItem.price * cartItem.quantity ;
     } ) ;
     return total ;
 

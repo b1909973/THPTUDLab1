@@ -3,7 +3,7 @@ import 'package:flutter/material.dart' ;
 import 'package:provider/provider.dart';
 
 import 'user_product_list_tile.dart' ;
-
+import 'edit_product_screen.dart';
 import 'products_manager.dart';
 import '../shared/app_drawer.dart';
 
@@ -18,7 +18,7 @@ static const routeName = '/user-products';
       appBar : AppBar (
         title : const Text ( ' Your Products ' ) ,
         actions : <Widget> [
-          buildAddButton() ,
+          buildAddButton(context) ,
         ] ,
       ),
       drawer: const AppDrawer(),
@@ -53,13 +53,15 @@ const Divider(),
 
    
                        
-Widget buildAddButton ( ) {
-  return IconButton (
-      icon : const Icon ( Icons.add ) ,
-    onPressed : ( ) {
-      print ( ' Go to edit product screen ' ) ;
-     } ,
-  );       
+Widget buildAddButton(BuildContext context) {
+return IconButton(
+icon: const Icon(Icons.add),
+onPressed: () {
+Navigator.of(context).pushNamed(
+EditProductScreen.routeName,
+);
+},
+);
 }
   
 
