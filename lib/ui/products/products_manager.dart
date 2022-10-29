@@ -96,6 +96,19 @@ Future<void> deleteProduct(String id) async {
 
 }
 
+Future<void> toggleFavoriteStatus(Product product) async {
+  final savedStatus = product.isFavorite;
+  product.isFavorite = !savedStatus;
+   if(!await _productsService.saveFavoriteStatus(product)){
+      product.isFavorite =savedStatus;
+  }
+}
+
+  
+
+
+
+
 
 
 
@@ -134,11 +147,7 @@ return _items.firstWhere((prod) => prod.id == id);
 // }
 
 
-void toggleFavoriteStatus(Product product) {
-final savedStatus = product.isFavorite;
-product.isFavorite = !savedStatus;
 
-}
 
 
 
