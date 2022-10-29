@@ -15,9 +15,10 @@ class ProductsOverviewScreen extends StatefulWidget {
   State<ProductsOverviewScreen> createState() => _ProductsOverviewScreenState() ;
 
 }
-class _ProductsOverviewScreenState extends State < ProductsOverviewScreen > {
+class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
   final _showOnlyFavorites = ValueNotifier<bool>(false) ;
   late Future<void> _fetchProducts;
+
     void initState(){
       super.initState();
       _fetchProducts = context.read<ProductsManager>().fetchProducts();
@@ -43,7 +44,7 @@ if (snapshot.connectionState == ConnectionState.done) {
 return ValueListenableBuilder<bool>(
 valueListenable:_showOnlyFavorites,
 builder: (context, onlyFavorites, child) {
-return ProductsGrid(onlyFavorites) ;
+return ProductsGrid(onlyFavorites);
 });
 }
 return const Center(

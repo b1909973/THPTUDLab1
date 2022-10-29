@@ -21,11 +21,11 @@ static const routeName = '/user-products';
  
  
   @override  
- Widget build ( BuildContext context ) {
+ Widget build(BuildContext context){
     final productsManager = ProductsManager() ;
     return Scaffold (
  
-      appBar : AppBar (
+      appBar : AppBar(
         title : const Text ( ' Your Products ' ) ,
         actions : <Widget> [
           buildAddButton(context) ,
@@ -43,7 +43,7 @@ child: CircularProgressIndicator(),
 );
 }
 return RefreshIndicator(
-onRefresh: () => _refreshProducts(context),
+onRefresh:()=> _refreshProducts(context),
 child: buildUserProductListView(),
 );
 }
